@@ -1,0 +1,9 @@
+pandas>=2.2
+numpy>=1.26
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+scikit-learn>=1.4
+statsmodels>=0.14
+Faker>=24.0
+python-dotenv>=1.0
+tqdm>=4.66
