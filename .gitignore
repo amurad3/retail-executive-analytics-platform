@@ -4,6 +4,7 @@ __pycache__/
 venv/
 .env
 *.log
+.pytest_cache/
 
 # Raw/generated data is reproducible from data_generation/ — don't version large data files
 /data/raw/

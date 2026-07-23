@@ -7,3 +7,4 @@ statsmodels>=0.14
 Faker>=24.0
 python-dotenv>=1.0
 tqdm>=4.66
+pytest>=8.0
