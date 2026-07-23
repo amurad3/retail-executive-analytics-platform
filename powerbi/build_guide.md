@@ -9,10 +9,15 @@ already sitting in Postgres, populated by the ETL pipeline and analytics modules
 
 1. **Power BI Desktop** (free) -- install from the Microsoft Store or
    https://powerbi.microsoft.com/desktop/
-2. **Npgsql** -- Power BI's PostgreSQL connector requires the Npgsql .NET driver.
-   Download the latest `.msi` from https://github.com/npgsql/npgsql/releases
-   (look for the Npgsql installer, not just the library) and run it. Without this,
-   Power BI's Postgres connector will fail to load.
+2. **Postgres driver** -- current Power BI Desktop versions bundle the Npgsql
+   provider internally, so try connecting first (see below) before installing
+   anything extra. If Power BI specifically errors asking for a driver, install
+   the **psqlODBC** driver instead (`.msi` from
+   https://www.postgresql.org/ftp/odbc/versions/, pick the latest x64 build)
+   and connect via **Get Data -> ODBC** rather than the native Postgres connector.
+   (There is no longer a standalone Npgsql installer published for this purpose --
+   the NuGet package and the GitHub source repo are for .NET developers, not
+   Power BI, and aren't the right download.)
 3. Confirm the local database is reachable: `psql -U postgres -h localhost -d retail_analytics -c "select 1;"`
 
 ## Connecting
